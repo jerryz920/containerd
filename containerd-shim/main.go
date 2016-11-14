@@ -33,6 +33,7 @@ type controlMessage struct {
 // Arg2: runtime binary
 func main() {
 	flag.Parse()
+	fmt.Printf("This is just a test to confirm the success")
 	cwd, err := os.Getwd()
 	if err != nil {
 		panic(err)
