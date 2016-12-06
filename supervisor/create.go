@@ -1,6 +1,7 @@
 package supervisor
 
 import (
+	"fmt"
 	"path/filepath"
 	"time"
 
@@ -45,6 +46,8 @@ func (s *Supervisor) start(t *StartTask) error {
 		NoPivotRoot: t.NoPivotRoot,
 		Timeout:     s.timeout,
 	})
+	fmt.Printf("Runtime: %v, args %v, labels %s\n", rt, rtArgs, t.Labels)
+
 	if err != nil {
 		return err
 	}
